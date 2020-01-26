@@ -8,9 +8,10 @@ namespace WebApplication1.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(String name, int age) // Recibimos un parámetro
         {
-            return View();
+            String data = name + " " + age; // Usamos el parámetro
+            return View("Index", data);
         }
     }
 }
