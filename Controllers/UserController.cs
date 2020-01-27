@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    [Route("/user")]
+    //[Route("/users/data")]
     public class UserController : Controller
     {
-        [Route("/user/data")]
+        [Route("/users/data")]
+        [Route("[controller]/[action]/{name}/{age}")]
         public IActionResult Index(String name, int age) // Recibimos un parámetro
         {
-            String data = name + " " + age; // Usamos el parámetro
+            String data = name + " tiene " + age + " años"; // Usamos el parámetro
             return View("Index", data);
         }
 
