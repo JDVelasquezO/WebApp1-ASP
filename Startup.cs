@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace WebApplication1
 {
@@ -48,8 +50,23 @@ namespace WebApplication1
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
+                //app.UseDeveloperExceptionPage();
+                //app.UseDatabaseErrorPage();
+                app.UseExceptionHandler(options => { // Para obtener la excepción que sucede en el servidor
+                    options.Run(async context =>
+                    {
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        context.Response.ContentType = "text/html";
+                        var ex = context.Features.Get < IExceptionHandlerFeature >();
+
+                        // SI se cumple es porque contiene la excepcion
+                        if (ex != null)
+                        {
+                            var error = $"<h1>Error: {ex.Error.Message}</h1>{ex.Error.StackTrace}";
+                            await context.Response.WriteAsync(error).ConfigureAwait(false);
+                        }
+                    });
+                });
             }
             else
             {

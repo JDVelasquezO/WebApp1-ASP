@@ -12,6 +12,7 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
+            //throw new Exception("Esta es una excepcion");
             return View();
         }
 
