@@ -57,6 +57,14 @@ namespace WebApplication1
                 app.UseHsts();
             }
 
+            app.UseStatusCodePages("text/plain", "Pagina de codigos de estado, codigo {0}"); // Controlar códigos de error
+            //app.UseStatusCodePages(async context => {
+            //    await context.HttpContext.Response.WriteAsync(
+            //        "Pagina de codigos de estado, codigo: " +
+            //        context.HttpContext.Response.StatusCode
+            //    ); // Retorna una promesa
+            //});
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

@@ -34,3 +34,4 @@ C:\Users\JDVelasquezO\source\repos\WebApplication1\WebApplication1\obj\Debug\net
 C:\Users\JDVelasquezO\source\repos\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
 C:\Users\JDVelasquezO\source\repos\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\JDVelasquezO\source\repos\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\User\Index.g.cshtml.cs
+C:\Users\JDVelasquezO\source\repos\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\User\Metodo.g.cshtml.cs
