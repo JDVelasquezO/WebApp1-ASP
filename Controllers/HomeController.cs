@@ -35,9 +35,17 @@ namespace WebApplication1.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int? statusCode = null)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ErrorViewModel error = null;
+            if (statusCode!= null)
+            {
+                error = new ErrorViewModel
+                {
+                    RequestId = Convert.ToString(statusCode)
+                };
+            }
+            return View(error);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace WebApplication1.Controllers
             return Redirect(url);
         }
 
-        public IActionResult Metodo(int age, String name)
+        public IActionResult CatchStatus(int code)
         {
-            String data = $"{name} tiene {age} años";
+            String data = $"Codigo de estado {code}";
             return View("Index", data);
         }
     }
