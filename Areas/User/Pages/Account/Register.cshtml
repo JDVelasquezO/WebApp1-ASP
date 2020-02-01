@@ -11,7 +11,8 @@
                 <div class="card-header">
                     <h3>Registro</h3>
                 </div>
-                <img src="~/images/icons/logo.png" width="150" class="mx-auto w-25" alt="logo" />
+                <img src="~/images/icons/logo.png" width="150" class="mx-auto" alt="logo" />
+                <br /><br />
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
@@ -28,6 +29,10 @@
                         <div class="form-group">
                             <input placeholder="Confirmar Contraseña" asp-for="Input.confirmPassword" class="form-control" />
                             <span asp-validation-for="Input.confirmPassword" class="text-danger"></span> <!-- Mensajes de validacion -->
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
                         </div>
                     </form>
                 </div>
