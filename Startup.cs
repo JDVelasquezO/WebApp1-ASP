@@ -97,6 +97,7 @@ namespace WebApplication1
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapAreaRoute("users", "User", "{controller=User}/{action=IndexMethod}/{id?}");
             });
         }
     }
