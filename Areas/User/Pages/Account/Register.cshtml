@@ -9,15 +9,25 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3>Registrar</h3>
+                    <h3>Registro</h3>
                 </div>
-                <img src="~/images/icons/logo.png" width="150" class="mx-auto w-25" alt="Alternate Text" />
+                <img src="~/images/icons/logo.png" width="150" class="mx-auto w-25" alt="logo" />
                 <div class="card-body">
                     <form method="post">
                         <div class="form-group">
-                            <label asp-for="Input.email"></label> <!-- Vinculamos el modelo Input -->
-                            <input autofocus type="email" asp-for="Input.email" class="form-control" />
+                            <!-- Vinculamos el modelo Input -->
+                            <input autofocus placeholder="Correo Electronico" asp-for="Input.email" class="form-control" />
                             <span asp-validation-for="Input.email" class="text-danger"></span> <!-- Mensajes de validacion -->
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Contraseña" asp-for="Input.password" class="form-control" />
+                            <span asp-validation-for="Input.password" class="text-danger"></span> <!-- Mensajes de validacion -->
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Confirmar Contraseña" asp-for="Input.confirmPassword" class="form-control" />
+                            <span asp-validation-for="Input.confirmPassword" class="text-danger"></span> <!-- Mensajes de validacion -->
                         </div>
                     </form>
                 </div>
